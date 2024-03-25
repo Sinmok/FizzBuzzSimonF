@@ -8,8 +8,9 @@ namespace FizzBuzzSimonF.Interfaces
 {
     public interface IFizzBuzzGame
     {
-        public List<string> Run(List<int> values);
-
-        public void SetRules(List<IFizzBuzzRule> rules);
+        /**
+      * Runs the game, get a list of outputs
+      */
+        public List<string> Run(List<int> values, List<IFizzBuzzRule> rules);
     }
 }

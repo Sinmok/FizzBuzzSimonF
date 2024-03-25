@@ -11,23 +11,22 @@ namespace FizzBuzzSimonF.Concrete
     public class FizzBuzzGame : IFizzBuzzGame
     {
 
-        private List<IFizzBuzzRule> _rules = [];
-
-        public List<string> Run(List<int> values)
+        public List<string> Run(List<int> values, List<IFizzBuzzRule> rules)
         {
+            if (rules.Count == 0)
+            {
+                throw new InvalidOperationException("Rules must not be empty");
+            }
+
             var results = new List<string>();
 
             foreach (var value in values)
             {
                 var output = string.Empty;
 
-                foreach (var rule in this._rules)
-                {
-                    if (rule.DoesApplyTo(value))
-                    {
-                        output = string.Concat(output, rule.GetRuleOutput());
-                    }
-             
+                foreach (var rule in rules.Where(rule => rule.DoesApplyTo(value)))
+                {        
+                    output = string.Concat(output, rule.GetRuleOutput());                         
                 }
 
 
@@ -37,9 +36,5 @@ namespace FizzBuzzSimonF.Concrete
             return results;
         }
 
-        public void SetRules(List<IFizzBuzzRule> rules)
-        {
-            _rules = rules;
-        }
     }
 }
