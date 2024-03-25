@@ -1,10 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using FizzBuzzSimonF.Concrete;
 using FizzBuzzSimonF.Concrete.Rules;
+using FizzBuzzSimonF.GameFinder;
 using FizzBuzzSimonF.Interfaces;
 
 
-IFizzBuzzGame game = new FizzBuzzGame();
+IFizzBuzzGame game = GameFinder.FindFizzBuzzGame();
 
 //Could get rules from a RuleFactory?
 var rules = new List<IFizzBuzzRule>()
