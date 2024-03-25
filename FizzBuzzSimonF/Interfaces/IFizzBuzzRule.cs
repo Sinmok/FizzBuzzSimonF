@@ -9,13 +9,13 @@ namespace FizzBuzzSimonF.Interfaces
     public interface IFizzBuzzRule
     {
         /**
-         * Returns the string that should be output, should doesApply return true
+         * Returns the string that should be output, should doesApply() return true
          */
-        public string getRuleOutput();
+        public string GetRuleOutput();
 
         /**
          * Checks if the given value applies to this rule
          */
-        public bool doesApply(int value);
+        public bool AppliesTo(int value);
     }
 }

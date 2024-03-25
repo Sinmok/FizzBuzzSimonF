@@ -24,33 +24,33 @@ namespace Tests
         [Test]
         public void TestFizzRuleApplies()
         {
-            Assert.That(this._fizzRule.doesApply(3), Is.EqualTo(true));
+            Assert.That(this._fizzRule.AppliesTo(3), Is.EqualTo(true));
         }
 
         [Test]
         public void TestFizzRuleApplies2()
         {
-            Assert.That(this._fizzRule.doesApply(6), Is.EqualTo(true));
+            Assert.That(this._fizzRule.AppliesTo(6), Is.EqualTo(true));
         }
 
 
         [Test]
         public void TestFizzRuleNotApplies()
         {
-            Assert.That(this._fizzRule.doesApply(5), Is.EqualTo(false));
+            Assert.That(this._fizzRule.AppliesTo(5), Is.EqualTo(false));
         }
 
         [Test]
         public void TestFizzRuleNotApplies2()
         {
-            Assert.That(this._fizzRule.doesApply(7), Is.EqualTo(false));
+            Assert.That(this._fizzRule.AppliesTo(7), Is.EqualTo(false));
         }
 
 
         [Test]
         public void TestFizzRuleOutput()
         {
-            Assert.That(this._fizzRule.getRuleOutput(), Is.EqualTo("Fizz"));
+            Assert.That(this._fizzRule.GetRuleOutput(), Is.EqualTo("Fizz"));
         }
 
         /*
@@ -60,32 +60,32 @@ namespace Tests
         [Test]
         public void TestBuzzRuleApplies()
         {
-            Assert.That(this._buzzRule.doesApply(5), Is.EqualTo(true));
+            Assert.That(this._buzzRule.AppliesTo(5), Is.EqualTo(true));
         }
 
         [Test]
         public void TestBuzzRuleApplies2()
         {
-            Assert.That(this._buzzRule.doesApply(10), Is.EqualTo(true));
+            Assert.That(this._buzzRule.AppliesTo(10), Is.EqualTo(true));
         }
 
 
         [Test]
         public void TestBuzzRuleNotApplies()
         {
-            Assert.That(this._buzzRule.doesApply(7), Is.EqualTo(false));
+            Assert.That(this._buzzRule.AppliesTo(7), Is.EqualTo(false));
         }
         [Test]
         public void TestBuzzRuleNotApplies2()
         {
-            Assert.That(this._buzzRule.doesApply(9), Is.EqualTo(false));
+            Assert.That(this._buzzRule.AppliesTo(9), Is.EqualTo(false));
         }
 
 
         [Test]
         public void TestBuzzRuleOutput()
         {
-            Assert.That(this._buzzRule.getRuleOutput(), Is.EqualTo("Buzz"));
+            Assert.That(this._buzzRule.GetRuleOutput(), Is.EqualTo("Buzz"));
         }
     }
 }

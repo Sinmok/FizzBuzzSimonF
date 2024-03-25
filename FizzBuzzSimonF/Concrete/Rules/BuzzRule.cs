@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzSimonF.Concrete.Rules
 {
-    public class BuzzRule : IFizzBuzzRule
+    public class BuzzRule : AbstractFizzBuzzRule
     {
-        public bool doesApply(int value)
+
+        public BuzzRule() {
+            this._outputText = "Buzz";
+        }
+
+        public override bool AppliesTo(int value)
         {
             return value % 5 == 0;
         }
 
-        public string getRuleOutput()
-        {
-            return "Buzz";
-        }
     }
 }
