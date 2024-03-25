@@ -1,4 +1,5 @@
-﻿using FizzBuzzSimonF.Interfaces;
+﻿using FizzBuzzSimonF.Attributes;
+using FizzBuzzSimonF.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzSimonF.Concrete
 {
+    [FizzBuzz]
     public class FizzBuzzGame : IFizzBuzzGame
     {
 

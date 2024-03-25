@@ -1,16 +1,41 @@
+using FizzBuzzSimonF.Attributes;
+using FizzBuzzSimonF.Concrete;
+using FizzBuzzSimonF.GameFinder;
+using FizzBuzzSimonF.Interfaces;
+
 namespace Tests
 {
     public class ReflectionTests
     {
+        private IFizzBuzzAttribute _attribute;
+
+
         [SetUp]
         public void Setup()
         {
+            _attribute = new FizzBuzzAttribute();
+        }
+
+
+        [Test]
+        public void DoesAttributeMatch()
+        {
+
+            Assert.That(_attribute.DoesImplementFizzBuzz(typeof(FizzBuzzGame)), Is.EqualTo(true));
         }
 
         [Test]
-        public void Test1()
+        public void DoesAttributeNotMatch()
         {
-            Assert.Pass();
+
+            Assert.That(_attribute.DoesImplementFizzBuzz(typeof(string)), Is.EqualTo(false));
+        }
+
+        [Test]
+        public void TestGameFinder()
+        {
+            Assert.IsTrue(GameFinder.FindFizzBuzzGame() is IFizzBuzzGame);
+
         }
     }
 }
