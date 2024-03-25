@@ -11,12 +11,12 @@ namespace FizzBuzzSimonF.Concrete.Rules
     {
         public bool doesApply(int value)
         {
-            throw new NotImplementedException();
+            return 5 % value == 0;
         }
 
         public string getRuleOutput()
         {
-            throw new NotImplementedException();
+            return "Buzz";
         }
     }
 }
