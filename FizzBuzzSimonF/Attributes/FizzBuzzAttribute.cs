@@ -9,9 +9,10 @@ namespace FizzBuzzSimonF.Attributes
 {
     public class FizzBuzzAttribute : Attribute, IFizzBuzzAttribute
     {
+        //checks that the given type implements IFizzBuzz
         public bool DoesImplementFizzBuzz(Type type)
         {
-            throw new NotImplementedException();
+            return typeof(IFizzBuzzGame).IsAssignableFrom(type);
         }
     }
 }
