@@ -18,6 +18,9 @@ namespace Tests
         private IFizzBuzzRule _customRuleFizz;
         private IFizzBuzzRule _customRuleBuzz;
 
+        //Just to test other rules if we wanted them!
+        private IFizzBuzzRule _bazzRule;
+
 
         [SetUp]
         public void Setup()
@@ -27,6 +30,8 @@ namespace Tests
             
             this._customRuleFizz = new CustomFizzBuzzRule(3,"Fizz");
             this._customRuleBuzz = new CustomFizzBuzzRule(5,"Buzz");
+
+            this._bazzRule = new CustomFizzBuzzRule(2, "Bazz");
         }
 
         [Test]
@@ -135,5 +140,25 @@ namespace Tests
             Assert.That(this._customRuleBuzz.GetRuleOutput(), Is.EqualTo("Buzz"));
         }
 
+
+        //Test different rules
+        [Test]
+        public void TestCustomBazzRuleApplies()
+        {
+            Assert.That(this._bazzRule.DoesApplyTo(2), Is.EqualTo(true));
+        }
+
+
+        [Test]
+        public void TestCustomBazzRuleNotApplies()
+        {
+            Assert.That(this._bazzRule.DoesApplyTo(7), Is.EqualTo(false));
+        }
+
+        [Test]
+        public void TestCustomBazzRule()
+        {
+            Assert.That(this._bazzRule.GetRuleOutput(), Is.EqualTo("Bazz"));
+        }
     }
 }

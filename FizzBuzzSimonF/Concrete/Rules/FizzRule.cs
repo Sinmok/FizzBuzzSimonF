@@ -17,7 +17,7 @@ namespace FizzBuzzSimonF.Concrete.Rules
 
 
         public override bool DoesApplyTo(int value)
-        {
+        { 
             return value % 3 == 0;
         }
 
