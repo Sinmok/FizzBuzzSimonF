@@ -16,6 +16,6 @@ namespace FizzBuzzSimonF.Interfaces
         /**
          * Checks if the given value applies to this rule
          */
-        public bool AppliesTo(int value);
+        public bool DoesApplyTo(int value);
     }
 }

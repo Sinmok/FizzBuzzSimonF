@@ -16,7 +16,7 @@ namespace FizzBuzzSimonF.Concrete.Rules
          * Check if rule applies to given value
          * Should be overridden
          */
-        public abstract bool AppliesTo(int value);
+        public abstract bool DoesApplyTo(int value);
 
         //Get text that should be output, if rule applies
         public string GetRuleOutput()

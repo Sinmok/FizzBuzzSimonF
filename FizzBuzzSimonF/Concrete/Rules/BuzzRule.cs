@@ -14,7 +14,7 @@ namespace FizzBuzzSimonF.Concrete.Rules
             this._outputText = "Buzz";
         }
 
-        public override bool AppliesTo(int value)
+        public override bool DoesApplyTo(int value)
         {
             return value % 5 == 0;
         }
