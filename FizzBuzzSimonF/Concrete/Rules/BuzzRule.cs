@@ -11,7 +11,7 @@ namespace FizzBuzzSimonF.Concrete.Rules
     {
         public bool doesApply(int value)
         {
-            return 5 % value == 0;
+            return value % 5 == 0;
         }
 
         public string getRuleOutput()
