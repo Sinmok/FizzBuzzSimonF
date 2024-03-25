@@ -14,11 +14,19 @@ namespace Tests
         private IFizzBuzzRule _fizzRule;
         private IFizzBuzzRule _buzzRule;
 
+        //Not strictly speaking needed, but demos clean design by being able to swap out one implementation for another
+        private IFizzBuzzRule _customRuleFizz;
+        private IFizzBuzzRule _customRuleBuzz;
+
+
         [SetUp]
         public void Setup()
         {
             this._fizzRule = new FizzRule();
-            this._buzzRule = new BuzzRule();
+            this._buzzRule = new BuzzRule();            
+            
+            this._customRuleFizz = new CustomFizzBuzzRule();
+            this._customRuleBuzz = new CustomFizzBuzzRule();
         }
 
         [Test]
@@ -87,5 +95,45 @@ namespace Tests
         {
             Assert.That(this._buzzRule.GetRuleOutput(), Is.EqualTo("Buzz"));
         }
+
+
+
+        //region test custom rules against IFizzBuzzRule
+        [Test]
+        public void TestCustomFizzRuleApplies()
+        {
+            Assert.That(this._customRuleFizz.AppliesTo(3), Is.EqualTo(true));
+        }
+
+        [Test]
+        public void TestCustomFizzRuleNotApplies()
+        {
+            Assert.That(this._customRuleFizz.AppliesTo(7), Is.EqualTo(false));
+        }
+
+        [Test]
+        public void TestCustomFizzRuleOutput()
+        {
+            Assert.That(this._customRuleFizz.GetRuleOutput(), Is.EqualTo("Fizz"));
+        }
+
+        [Test]
+        public void TestCustomBuzzRuleApplies()
+        {
+            Assert.That(this._customRuleBuzz.AppliesTo(5), Is.EqualTo(true));
+        }
+
+        [Test]
+        public void TestCustomBuzzRuleNotApplies()
+        {
+            Assert.That(this._customRuleBuzz.AppliesTo(3), Is.EqualTo(false));
+        }
+
+        [Test]
+        public void TestCustomBuzzRuleOutput()
+        {
+            Assert.That(this._customRuleBuzz.GetRuleOutput(), Is.EqualTo("Buzz"));
+        }
+
     }
 }
